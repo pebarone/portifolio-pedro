@@ -8,8 +8,8 @@ const rawProjects = [
     },
     folderName: "melcolorindo",
     date: {
-      en: "February 2025",
-      pt: "Fevereiro de 2025",
+      en: "2026",
+      pt: "2026",
     },
     description: {
       en: `
@@ -43,8 +43,8 @@ const rawProjects = [
     },
     folderName: "infoarchive",
     date: {
-      en: "2025",
-      pt: "2025",
+      en: "2026",
+      pt: "2026",
     },
     description: {
       en: `
@@ -81,8 +81,8 @@ const rawProjects = [
     },
     folderName: "otcsuploader",
     date: {
-      en: "2025",
-      pt: "2025",
+      en: "2026",
+      pt: "2026",
     },
     description: {
       en: `
@@ -146,8 +146,7 @@ const rawProjects = [
         Backend em Node.js/Express, frontend mínimo em HTML/JS via WebReport.
       `,
     },
-    repository: "https://github.com/pebarone/adobe-api-deploy",
-    site: "https://github.com/pebarone/adobe-api-deploy",
+    repository: "https://github.com/pebarone/signature-orchestrator-api",
     accent: "#FF0000",
   },
   {
@@ -167,13 +166,12 @@ const rawProjects = [
       O backend transmite dados de log, que o frontend então analisa, destaca (para termos de pesquisa) e exibe, organizando as entradas em grupos para facilitar a leitura. É uma ferramenta essencial para solucionar problemas e verificar os fluxos de trabalho automatizados da integração Adobe Sign e OpenText Content Server.`,
     },
     repository: "https://github.com/pebarone/signature-orchestrator-api",
-    site: "https://github.com/pebarone/signature-orchestrator-api",
     accent: "#00F0FF",
   },
   {
     title: {
-      en: "DPT Dashboard — Ticket Management",
-      pt: "DPT Dashboard — Gestão de Chamados",
+      en: "PwC Dashboard — Ticket Management",
+      pt: "PwC Dashboard — Gestão de Chamados",
     },
     folderName: "dashdpt",
     date: {
@@ -219,8 +217,8 @@ const rawProjects = [
     },
     folderName: "assessorvirtual",
     date: {
-      en: "November 2024",
-      pt: "Novembro de 2024",
+      en: "November 2025",
+      pt: "Novembro de 2025",
     },
     description: {
       en: `
@@ -250,44 +248,7 @@ const rawProjects = [
     site: "https://assessor-virtual-api.onrender.com",
     accent: "#7C5CFC",
   },
-  {
-    title: {
-      en: "hAppVida Fitness",
-      pt: "hAppVida Fitness",
-    },
-    folderName: "happvida",
-    date: {
-      en: "October 2023",
-      pt: "Outubro de 2023",
-    },
-    description: {
-      en: `hAppVida Fitness is an academic React application that simulates a health and wellness platform. It supports user registration and login, with a simulated backend using <code>json-server</code>.<br><br>
-      To test the app, use the default user from the <code>users.json</code> file:<br>
-      <strong>Login:</strong> user@teste.com<br>
-      <strong>Password:</strong> 12345<br><br>
-      New users can also be registered through the interface.<br><br>
-      The project was built with:<br><br>
-      ${BULLET}React.js (frontend)<br>
-      ${BULLET}json-server (mock RESTful API)<br>
-      ${BULLET}Node.js (scripts and management)<br>
-      ${BULLET}npm-run-all (simultaneous API and frontend execution)<br><br>
-      The API runs on port 3000, so make sure no other app is using this port. The frontend may run on a different port (e.g., 5173).`,
-      pt: `hAppVida Fitness é uma aplicação acadêmica em React que simula o funcionamento de uma plataforma de saúde e bem-estar. Nela é possível realizar cadastro e login de usuários, com backend simulado via <code>json-server</code>.<br><br>
-      Para testar a aplicação, utilize o usuário padrão do arquivo <code>users.json</code>:<br>
-      <strong>Login:</strong> user@teste.com<br>
-      <strong>Senha:</strong> 12345<br><br>
-      Também é possível cadastrar novos usuários pela interface.<br><br>
-      O projeto foi desenvolvido com:<br><br>
-      ${BULLET}React.js (frontend)<br>
-      ${BULLET}json-server (mock de API RESTful)<br>
-      ${BULLET}Node.js (scripts e gerenciamento)<br>
-      ${BULLET}npm-run-all (execução simultânea da API e frontend)<br><br>
-      A API roda na porta 3000, então certifique-se de que nenhuma outra aplicação esteja usando essa porta. O frontend pode rodar em outra porta (ex: 5173).`,
-    },
-    repository: "https://github.com/pebarone/hAppVidaFitness",
-    site: "https://happvida.netlify.app/login",
-    accent: "#00F0FF",
-  },
+
   {
     title: {
       en: "TranscriPy",
@@ -327,6 +288,44 @@ const rawProjects = [
     repository: "https://github.com/pebarone/YOUTUBE-DOWNLOADER",
     site: "https://youtube-downloader-9dqe.onrender.com",
     accent: "#FF0000",
+  },
+    {
+    title: {
+      en: "hAppVida Fitness",
+      pt: "hAppVida Fitness",
+    },
+    folderName: "happvida",
+    date: {
+      en: "October 2023",
+      pt: "Outubro de 2023",
+    },
+    description: {
+      en: `hAppVida Fitness is an academic React application that simulates a health and wellness platform. It supports user registration and login, with a simulated backend using <code>json-server</code>.<br><br>
+      To test the app, use the default user from the <code>users.json</code> file:<br>
+      <strong>Login:</strong> user@teste.com<br>
+      <strong>Password:</strong> 12345<br><br>
+      New users can also be registered through the interface.<br><br>
+      The project was built with:<br><br>
+      ${BULLET}React.js (frontend)<br>
+      ${BULLET}json-server (mock RESTful API)<br>
+      ${BULLET}Node.js (scripts and management)<br>
+      ${BULLET}npm-run-all (simultaneous API and frontend execution)<br><br>
+      The API runs on port 3000, so make sure no other app is using this port. The frontend may run on a different port (e.g., 5173).`,
+      pt: `hAppVida Fitness é uma aplicação acadêmica em React que simula o funcionamento de uma plataforma de saúde e bem-estar. Nela é possível realizar cadastro e login de usuários, com backend simulado via <code>json-server</code>.<br><br>
+      Para testar a aplicação, utilize o usuário padrão do arquivo <code>users.json</code>:<br>
+      <strong>Login:</strong> user@teste.com<br>
+      <strong>Senha:</strong> 12345<br><br>
+      Também é possível cadastrar novos usuários pela interface.<br><br>
+      O projeto foi desenvolvido com:<br><br>
+      ${BULLET}React.js (frontend)<br>
+      ${BULLET}json-server (mock de API RESTful)<br>
+      ${BULLET}Node.js (scripts e gerenciamento)<br>
+      ${BULLET}npm-run-all (execução simultânea da API e frontend)<br><br>
+      A API roda na porta 3000, então certifique-se de que nenhuma outra aplicação esteja usando essa porta. O frontend pode rodar em outra porta (ex: 5173).`,
+    },
+    repository: "https://github.com/pebarone/hAppVidaFitness",
+    site: "https://happvida.netlify.app/login",
+    accent: "#00F0FF",
   },
 ];
 
