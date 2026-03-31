@@ -2,10 +2,7 @@ const BULLET = `<svg viewBox="0 0 24 24" fill="currentColor" stroke="none" style
 
 const rawProjects = [
   {
-    title: {
-      en: "Mel Colorindo",
-      pt: "Mel Colorindo",
-    },
+    title: "Mel Colorindo",
     folderName: "melcolorindo",
     date: {
       en: "February 2025",
@@ -37,10 +34,42 @@ const rawProjects = [
     accent: "#FFB347",
   },
   {
-    title: {
-      en: "InfoArchive Toolkit",
-      pt: "InfoArchive Toolkit",
+    title: "Assessor de Investimentos Virtual",
+    folderName: "assessorvirtual",
+    date: {
+      en: "November 2024",
+      pt: "Novembro de 2024",
     },
+    description: {
+      en: `
+        Full-stack investment platform simulating a complete financial ecosystem with premium architecture.<br><br>
+        <b>Core features:</b><br>
+        ${BULLET}API built with <b>Node.js/Express</b> following <b>Clean Architecture</b> and <b>SOLID</b> principles;<br>
+        ${BULLET}<b>Oracle Database</b> integration with complex constraints and relationships;<br>
+        ${BULLET}Robust security with <b>JWT (Access/Refresh Tokens)</b>, bcrypt, and rate limiting;<br>
+        ${BULLET}<b>Strategy Design Pattern</b> for automated portfolio recommendations based on risk profile;<br>
+        ${BULLET}Full investment lifecycle (deposit, asset trading, real-time dashboard);<br>
+        ${BULLET}Account verification and recovery via <b>Gmail API + OAuth2</b>.<br><br>
+        Interactive documentation via <b>Swagger (OpenAPI)</b> and containerized with Docker.
+      `,
+      pt: `
+        Plataforma de investimentos full-stack que simula um ecossistema financeiro completo com arquitetura premium.<br><br>
+        <b>Funcionalidades principais:</b><br>
+        ${BULLET}API em <b>Node.js/Express</b> seguindo <b>Clean Architecture</b> e princípios <b>SOLID</b>;<br>
+        ${BULLET}Integração com <b>Oracle Database</b> com constraints e relacionamentos complexos;<br>
+        ${BULLET}Segurança robusta com <b>JWT (Access/Refresh Tokens)</b>, bcrypt e rate limiting;<br>
+        ${BULLET}<b>Design Pattern Strategy</b> para recomendações automáticas de carteira por perfil de risco;<br>
+        ${BULLET}Ciclo completo de investimento (depósito, compra/venda, dashboard em tempo real);<br>
+        ${BULLET}Verificação de conta e recuperação via <b>Gmail API + OAuth2</b>.<br><br>
+        Documentação interativa com <b>Swagger (OpenAPI)</b> e suporte a Docker.
+      `,
+    },
+    repository: "https://github.com/pebarone/assessor-virtual-api",
+    site: "https://assessor-virtual-api.onrender.com",
+    accent: "#7C5CFC",
+  },
+  {
+    title: "InfoArchive Toolkit",
     folderName: "infoarchive",
     date: {
       en: "2025",
@@ -75,10 +104,7 @@ const rawProjects = [
     accent: "#E31837",
   },
   {
-    title: {
-      en: "OTCS File Uploader",
-      pt: "OTCS File Uploader",
-    },
+    title: "OTCS File Uploader",
     folderName: "otcsuploader",
     date: {
       en: "2025",
@@ -113,10 +139,7 @@ const rawProjects = [
     accent: "#0066B2",
   },
   {
-    title: {
-      en: "Signature Orchestrator API",
-      pt: "Signature Orchestrator API",
-    },
+    title: "Adobe API Deploy",
     folderName: "adobe",
     date: {
       en: "May 2025",
@@ -151,30 +174,59 @@ const rawProjects = [
     accent: "#FF0000",
   },
   {
-    title: {
-      en: "LogViewer for Signature Orchestrator API",
-      pt: "Visualizador de Logs para Signature Orchestrator API",
-    },
-    folderName: "logview",
+    title: "hAppVida Fitness",
+    folderName: "happvida",
     date: {
-      en: "July 2025",
-      pt: "Julho de 2025",
+      en: "October 2023",
+      pt: "Outubro de 2023",
     },
     description: {
-      en: `A web application complementing the **Signature Orchestrator API** integration, providing real-time auditing and visualization of server logs. It uses Server-Sent Events (SSE) for live updates, allowing users to pause, search, filter by log level (INFO, WARN, ERROR, EVENT), and clear logs. This viewer is crucial for monitoring the background processes and integrations of the Signature Orchestrator API, ensuring full visibility into document signature workflows and Content Server operations.<br><br>
-      The backend streams log data, which the frontend then parses, highlights (for search terms), and displays, organizing entries into groups for readability. It's an essential tool for troubleshooting and verifying the automated workflows of the Adobe Sign and OpenText Content Server integration.`,
-      pt: `Uma aplicação web que complementa a integração **Signature Orchestrator API**, fornecendo auditoria e visualização em tempo real dos logs do servidor. Ela utiliza Server-Sent Events (SSE) para atualizações ao vivo, permitindo que os usuários pausem, pesquisem, filtrem por nível de log (INFO, WARN, ERROR, EVENT) e limpem os logs. Este visualizador é crucial para monitorar os processos em segundo plano e as integrações da Signature Orchestrator API, garantindo visibilidade total nos fluxos de trabalho de assinatura de documentos e nas operações do Content Server. <br><br>
-      O backend transmite dados de log, que o frontend então analisa, destaca (para termos de pesquisa) e exibe, organizando as entradas em grupos para facilitar a leitura. É uma ferramenta essencial para solucionar problemas e verificar os fluxos de trabalho automatizados da integração Adobe Sign e OpenText Content Server.`,
+      en: `hAppVida Fitness is an academic React application that simulates a health and wellness platform. It supports user registration and login, with a simulated backend using <code>json-server</code>.<br><br>
+      To test the app, use the default user from the <code>users.json</code> file:<br>
+      <strong>Login:</strong> user@teste.com<br>
+      <strong>Password:</strong> 12345<br><br>
+      New users can also be registered through the interface.<br><br>
+      The project was built with:<br><br>
+      ${BULLET}React.js (frontend)<br>
+      ${BULLET}json-server (mock RESTful API)<br>
+      ${BULLET}Node.js (scripts and management)<br>
+      ${BULLET}npm-run-all (simultaneous API and frontend execution)<br><br>
+      The API runs on port 3000, so make sure no other app is using this port. The frontend may run on a different port (e.g., 5173).`,
+      pt: `hAppVida Fitness é uma aplicação acadêmica em React que simula o funcionamento de uma plataforma de saúde e bem-estar. Nela é possível realizar cadastro e login de usuários, com backend simulado via <code>json-server</code>.<br><br>
+      Para testar a aplicação, utilize o usuário padrão do arquivo <code>users.json</code>:<br>
+      <strong>Login:</strong> user@teste.com<br>
+      <strong>Senha:</strong> 12345<br><br>
+      Também é possível cadastrar novos usuários pela interface.<br><br>
+      O projeto foi desenvolvido com:<br><br>
+      ${BULLET}React.js (frontend)<br>
+      ${BULLET}json-server (mock de API RESTful)<br>
+      ${BULLET}Node.js (scripts e gerenciamento)<br>
+      ${BULLET}npm-run-all (execução simultânea da API e frontend)<br><br>
+      A API roda na porta 3000, então certifique-se de que nenhuma outra aplicação esteja usando essa porta. O frontend pode rodar em outra porta (ex: 5173).`,
     },
-    repository: "https://github.com/pebarone/signature-orchestrator-api",
-    site: "https://github.com/pebarone/signature-orchestrator-api",
+    repository: "https://github.com/pebarone/hAppVidaFitness",
+    site: "https://happvida.netlify.app/login",
     accent: "#00F0FF",
   },
   {
-    title: {
-      en: "DPT Dashboard — Ticket Management",
-      pt: "DPT Dashboard — Gestão de Chamados",
+    title: "TranscriPy",
+    folderName: "transcripy",
+    date: {
+      en: "April 2025",
+      pt: "Abril de 2025",
     },
+    description: {
+      en: `TranscriPy is a command-line (CLI) application for transcribing audio using OpenAI's Whisper. It quickly converts files into text, supports multiple languages, formats (.txt and .srt), and GPU acceleration when available.<br><br>
+      Developed in Python, the project uses FFmpeg, prompt_toolkit, and PyTorch.<br><br>Ideal for automating transcriptions of interviews, meetings, or podcasts directly from the terminal.`,
+      pt: `TranscriPy é uma aplicação de linha de comando (CLI) para transcrição de áudios com Whisper da OpenAI. Permite converter arquivos em texto de forma rápida, com suporte a múltiplos idiomas, formatos (.txt e .srt) e aceleração por GPU quando disponível.<br><br>
+      Desenvolvido em Python, o projeto utiliza FFmpeg, prompt_toolkit e PyTorch. <br><br>Ideal para automatizar transcrições de entrevistas, reuniões ou podcasts diretamente do terminal.`,
+    },
+    repository: "https://github.com/pebarone/TranscriPy",
+    site: "https://github.com/pebarone/TranscriPy",
+    accent: "#3776AB",
+  },
+  {
+    title: "DPT Dashboard — Ticket Management",
     folderName: "dashdpt",
     date: {
       en: "July 2025",
@@ -213,106 +265,7 @@ const rawProjects = [
     accent: "#F3C148",
   },
   {
-    title: {
-      en: "Virtual Investment Advisor",
-      pt: "Assessor de Investimentos Virtual",
-    },
-    folderName: "assessorvirtual",
-    date: {
-      en: "November 2024",
-      pt: "Novembro de 2024",
-    },
-    description: {
-      en: `
-        Full-stack investment platform simulating a complete financial ecosystem with premium architecture.<br><br>
-        <b>Core features:</b><br>
-        ${BULLET}API built with <b>Node.js/Express</b> following <b>Clean Architecture</b> and <b>SOLID</b> principles;<br>
-        ${BULLET}<b>Oracle Database</b> integration with complex constraints and relationships;<br>
-        ${BULLET}Robust security with <b>JWT (Access/Refresh Tokens)</b>, bcrypt, and rate limiting;<br>
-        ${BULLET}<b>Strategy Design Pattern</b> for automated portfolio recommendations based on risk profile;<br>
-        ${BULLET}Full investment lifecycle (deposit, asset trading, real-time dashboard);<br>
-        ${BULLET}Account verification and recovery via <b>Gmail API + OAuth2</b>.<br><br>
-        Interactive documentation via <b>Swagger (OpenAPI)</b> and containerized with Docker.
-      `,
-      pt: `
-        Plataforma de investimentos full-stack que simula um ecossistema financeiro completo com arquitetura premium.<br><br>
-        <b>Funcionalidades principais:</b><br>
-        ${BULLET}API em <b>Node.js/Express</b> seguindo <b>Clean Architecture</b> e princípios <b>SOLID</b>;<br>
-        ${BULLET}Integração com <b>Oracle Database</b> com constraints e relacionamentos complexos;<br>
-        ${BULLET}Segurança robusta com <b>JWT (Access/Refresh Tokens)</b>, bcrypt e rate limiting;<br>
-        ${BULLET}<b>Design Pattern Strategy</b> para recomendações automáticas de carteira por perfil de risco;<br>
-        ${BULLET}Ciclo completo de investimento (depósito, compra/venda, dashboard em tempo real);<br>
-        ${BULLET}Verificação de conta e recuperação via <b>Gmail API + OAuth2</b>.<br><br>
-        Documentação interativa com <b>Swagger (OpenAPI)</b> e suporte a Docker.
-      `,
-    },
-    repository: "https://github.com/pebarone/assessor-virtual-api",
-    site: "https://assessor-virtual-api.onrender.com",
-    accent: "#7C5CFC",
-  },
-  {
-    title: {
-      en: "hAppVida Fitness",
-      pt: "hAppVida Fitness",
-    },
-    folderName: "happvida",
-    date: {
-      en: "October 2023",
-      pt: "Outubro de 2023",
-    },
-    description: {
-      en: `hAppVida Fitness is an academic React application that simulates a health and wellness platform. It supports user registration and login, with a simulated backend using <code>json-server</code>.<br><br>
-      To test the app, use the default user from the <code>users.json</code> file:<br>
-      <strong>Login:</strong> user@teste.com<br>
-      <strong>Password:</strong> 12345<br><br>
-      New users can also be registered through the interface.<br><br>
-      The project was built with:<br><br>
-      ${BULLET}React.js (frontend)<br>
-      ${BULLET}json-server (mock RESTful API)<br>
-      ${BULLET}Node.js (scripts and management)<br>
-      ${BULLET}npm-run-all (simultaneous API and frontend execution)<br><br>
-      The API runs on port 3000, so make sure no other app is using this port. The frontend may run on a different port (e.g., 5173).`,
-      pt: `hAppVida Fitness é uma aplicação acadêmica em React que simula o funcionamento de uma plataforma de saúde e bem-estar. Nela é possível realizar cadastro e login de usuários, com backend simulado via <code>json-server</code>.<br><br>
-      Para testar a aplicação, utilize o usuário padrão do arquivo <code>users.json</code>:<br>
-      <strong>Login:</strong> user@teste.com<br>
-      <strong>Senha:</strong> 12345<br><br>
-      Também é possível cadastrar novos usuários pela interface.<br><br>
-      O projeto foi desenvolvido com:<br><br>
-      ${BULLET}React.js (frontend)<br>
-      ${BULLET}json-server (mock de API RESTful)<br>
-      ${BULLET}Node.js (scripts e gerenciamento)<br>
-      ${BULLET}npm-run-all (execução simultânea da API e frontend)<br><br>
-      A API roda na porta 3000, então certifique-se de que nenhuma outra aplicação esteja usando essa porta. O frontend pode rodar em outra porta (ex: 5173).`,
-    },
-    repository: "https://github.com/pebarone/hAppVidaFitness",
-    site: "https://happvida.netlify.app/login",
-    accent: "#00F0FF",
-  },
-  {
-    title: {
-      en: "TranscriPy",
-      pt: "TranscriPy",
-    },
-    folderName: "transcripy",
-    date: {
-      en: "April 2025",
-      pt: "Abril de 2025",
-    },
-    description: {
-      en: `TranscriPy is a command-line (CLI) application for transcribing audio using OpenAI's Whisper. It quickly converts files into text, supports multiple languages, formats (.txt and .srt), and GPU acceleration when available.<br><br>
-      Developed in Python, the project uses FFmpeg, prompt_toolkit, and PyTorch.<br><br>Ideal for automating transcriptions of interviews, meetings, or podcasts directly from the terminal.`,
-      pt: `TranscriPy é uma aplicação de linha de comando (CLI) para transcrição de áudios com Whisper da OpenAI. Permite converter arquivos em texto de forma rápida, com suporte a múltiplos idiomas, formatos (.txt e .srt) e aceleração por GPU quando disponível.<br><br>
-      Desenvolvido em Python, o projeto utiliza FFmpeg, prompt_toolkit e PyTorch. <br><br>Ideal para automatizar transcrições de entrevistas, reuniões ou podcasts diretamente do terminal.`,
-    },
-    repository: "https://github.com/pebarone/TranscriPy",
-    site: "https://github.com/pebarone/TranscriPy",
-    accent: "#3776AB",
-  },
-  {
-    title: {
-      en: "YouTube Video Downloader",
-      pt: "YouTube Video Downloader",
-    },
+    title: "YouTube Video Downloader",
     folderName: "youtubedownloader",
     date: {
       en: "April 2024",
@@ -327,6 +280,23 @@ const rawProjects = [
     repository: "https://github.com/pebarone/YOUTUBE-DOWNLOADER",
     site: "https://youtube-downloader-9dqe.onrender.com",
     accent: "#FF0000",
+  },
+  {
+    title: "Realtime Log Viewer",
+    folderName: "logview",
+    date: {
+      en: "July 2025",
+      pt: "Julho de 2025",
+    },
+    description: {
+      en: `A web application complementing the **Adobe API Deploy** integration, providing real-time auditing and visualization of server logs. It uses Server-Sent Events (SSE) for live updates, allowing users to pause, search, filter by log level (INFO, WARN, ERROR, EVENT), and clear logs. This viewer is crucial for monitoring the background processes and integrations of the Adobe API Deploy, ensuring full visibility into document signature workflows and Content Server operations.<br><br>
+      The backend streams log data, which the frontend then parses, highlights (for search terms), and displays, organizing entries into groups for readability. It's an essential tool for troubleshooting and verifying the automated workflows of the Adobe Sign and OpenText Content Server integration.`,
+      pt: `Uma aplicação web que complementa a integração **Adobe API Deploy**, fornecendo auditoria e visualização em tempo real dos logs do servidor. Ela utiliza Server-Sent Events (SSE) para atualizações ao vivo, permitindo que os usuários pausem, pesquisem, filtrem por nível de log (INFO, WARN, ERROR, EVENT) e limpem os logs. Este visualizador é crucial para monitorar os processos em segundo plano e as integrações do Adobe API Deploy, garantindo visibilidade total nos fluxos de trabalho de assinatura de documentos e nas operações do Content Server. <br><br>
+      O backend transmite dados de log, que o frontend então analisa, destaca (para termos de pesquisa) e exibe, organizando as entradas em grupos para facilitar a leitura. É uma ferramenta essencial para solucionar problemas e verificar os fluxos de trabalho automatizados da integração Adobe Sign e OpenText Content Server.`,
+    },
+    repository: "https://github.com/pebarone/signature-orchestrator-api",
+    site: "https://github.com/pebarone/signature-orchestrator-api",
+    accent: "#00F0FF",
   },
 ];
 

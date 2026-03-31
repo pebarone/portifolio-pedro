@@ -89,7 +89,7 @@ const untilt = (i) => {
           @click="open(proj)"
         >
           <div class="proj-img">
-            <img :src="proj.image" :alt="proj.title" />
+            <img :src="proj.image" :alt="proj.title[locale]" />
             <div
               class="proj-overlay"
               :style="{ background: proj.accent + '1a' }"
@@ -102,7 +102,7 @@ const untilt = (i) => {
           </div>
           <div class="proj-meta">
             <div>
-              <h3 class="proj-title">{{ proj.title }}</h3>
+              <h3 class="proj-title">{{ proj.title[locale] }}</h3>
               <p class="proj-date">{{ proj.date[locale] }}</p>
             </div>
             <div class="proj-dot" :style="{ background: proj.accent }"></div>

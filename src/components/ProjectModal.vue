@@ -14,6 +14,7 @@ const { t, locale } = useI18n();
 const overlay = ref(null);
 const panel = ref(null);
 const currentSlide = ref(0);
+const fullscreenImage = ref(null);
 
 const screenshots = computed(() => {
   if (!props.project) return [];
@@ -26,6 +27,7 @@ watch(
     await nextTick();
     if (v) {
       currentSlide.value = 0;
+      fullscreenImage.value = null; // reset fullscreen on open
       gsap.fromTo(overlay.value, { opacity: 0 }, { opacity: 1, duration: 0.3 });
       gsap.fromTo(
         panel.value,
@@ -57,6 +59,14 @@ const prevSlide = () => {
 const goToSlide = (i) => {
   currentSlide.value = i;
 };
+
+const openFullscreen = (src) => {
+  fullscreenImage.value = src;
+};
+
+const closeFullscreen = () => {
+  fullscreenImage.value = null;
+};
 </script>
 
 <template>
@@ -71,7 +81,7 @@ const goToSlide = (i) => {
         <!-- Header bar -->
         <div class="panel-header">
           <div class="panel-title">
-            <span class="panel-name">{{ project.title }}</span>
+            <span class="panel-name">{{ project.title[locale] }}</span>
             <span class="panel-date">{{ project.date[locale] }}</span>
           </div>
           <button
@@ -98,8 +108,10 @@ const goToSlide = (i) => {
             <div class="gallery-viewport">
               <img
                 :src="screenshots[currentSlide]"
-                :alt="project.title + ' screenshot ' + (currentSlide + 1)"
+                :alt="project.title[locale] + ' screenshot ' + (currentSlide + 1)"
                 class="gallery-img"
+                @click="openFullscreen(screenshots[currentSlide])"
+                title="Click to view fullscreen"
               />
             </div>
 
@@ -140,8 +152,10 @@ const goToSlide = (i) => {
           <div class="gallery-wrap gallery-fallback" v-else>
             <img
               :src="project.image"
-              :alt="project.title"
+              :alt="project.title[locale]"
               class="gallery-img"
+              @click="openFullscreen(project.image)"
+              title="Click to view fullscreen"
             />
           </div>
 
@@ -173,6 +187,21 @@ const goToSlide = (i) => {
           </div>
         </div>
       </div>
+
+      <!-- Fullscreen Image Viewer -->
+      <div 
+        class="fullscreen-overlay" 
+        v-if="fullscreenImage" 
+        @click="closeFullscreen"
+      >
+        <button class="fullscreen-close" @click="closeFullscreen" aria-label="Close fullscreen">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
+        <img :src="fullscreenImage" class="fullscreen-img" @click.stop />
+      </div>
+
     </div>
   </Teleport>
 </template>
@@ -266,7 +295,7 @@ const goToSlide = (i) => {
 /* Gallery */
 .gallery-wrap {
   position: relative;
-  background: #000;
+  background: #09090b;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -288,8 +317,10 @@ const goToSlide = (i) => {
 .gallery-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* ensures complete image is visible */
   transition: opacity 0.3s ease;
+  padding: 16px; /* spacing so it doesn't touch the borders immediately */
+  cursor: zoom-in;
 }
 
 .gallery-nav {
@@ -378,6 +409,52 @@ const goToSlide = (i) => {
   flex-direction: column;
   gap: 32px;
   border-left: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Fullscreen Viewer */
+.fullscreen-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(5px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  cursor: zoom-out;
+}
+
+.fullscreen-img {
+  max-width: 95vw;
+  max-height: 95vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  cursor: default;
+}
+
+.fullscreen-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 10001;
+}
+
+.fullscreen-close:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.05);
 }
 
 .desc {

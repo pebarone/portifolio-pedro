@@ -29,8 +29,8 @@ const contacts = [
   },
   {
     labelKey: "github_label",
-    value: "github.com/pbrnx",
-    link: "https://github.com/pbrnx",
+    value: "github.com/pebarone",
+    link: "https://github.com/pebarone",
     icon: ICONS.github,
   },
 ];
